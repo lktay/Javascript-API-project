@@ -15,7 +15,13 @@ header h1 {
   color: black;
   text-shadow: 1px 1px #353b48;
 }
+.img-container {
+  background-color: white;
+  width: calc(200px + 0.1vh);
+  height: calc(200px + 0.1vh);
+  margin: 0 auto 5%;
+}
 
-/* .hidden {
+.hidden {
   visibility: hidden;
-} */
+}
