@@ -3,7 +3,7 @@ body {
   padding: 0;
   background: #e74c3c !important;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: calc(20px + 0.1vw);
+  font-size: calc(18px + 0.1vw);
 }
 
 header {
@@ -19,6 +19,7 @@ header h1 {
 
 .alert {
   text-align: center;
+  margin-bottom: 1.5%;
   height: 25px;
 }
 
@@ -32,7 +33,7 @@ header h1 {
 }
 
 .container p {
-  padding: 5%;
+  padding: 1% 10%;
   width: 1137px;
 }
 
@@ -40,6 +41,7 @@ header h1 {
   visibility: hidden;
 }
 footer {
+  margin-top: 1%;
   position: fixed;
   left: 0;
   bottom: 0;

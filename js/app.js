@@ -8,6 +8,7 @@ const toolTip = document.querySelector("#nav-tooltip");
 //***FUNCTIONS***
 // search function
 async function search(e) {
+  e.preventDefault();
   let searchValue = document.querySelector(".search_input").value;
   let stringPassIn = `https://ffxivcollect.com/api/minions?name_en_cont=${searchValue}`;
 
@@ -33,10 +34,12 @@ async function search(e) {
         descriptionBox.innerHTML = `<p>${minionDescription}</p>`;
         enDescriptionBox.innerHTML = `<p>${minionEnDescription}</p>`;
         toolTip.innerHTML = `<p>${minionTooltip}</p>`;
-        // returnToDefault();
+        searchValue.value = "";
+        alert.textContent = "";
+        alert.classList.add("hidden");
       });
   } else {
-    await displayError();
+    displayError();
   }
 }
 
@@ -45,12 +48,6 @@ function displayError() {
   alert.textContent = "Please enter a value";
   alert.classList.remove("hidden");
 }
-//default function
-// function returnToDefault() {
-//   searchValue.value = "";
-//   alert.textContent = "";
-//   alert.classList.add("hidden");
-// }
 
 // event listeners
 document.querySelector(".search-button").addEventListener("click", search);
