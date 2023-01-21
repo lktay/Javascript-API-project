@@ -19,6 +19,7 @@
   width: 450px;
   caret-color: red;
   transition: width 0.4s linear;
+  font-size: calc(22px + 0.2vw);
 }
 .search_icon:hover {
   background: white;
