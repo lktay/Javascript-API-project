@@ -38,6 +38,7 @@ async function search(e) {
         minionImgContainer.classList.remove("hidden");
         minionImgContainer.innerHTML = `<img src="${minionImg}" alt="image of ${minionName}">`;
         infoContainer.classList.remove("hidden");
+        minionNameContainer.classList.remove("hidden");
         minionNameContainer.innerHTML = `<p>${minionName}</p>`;
         descriptionBox.innerHTML = `<p>${minionDescription}</p>`;
         enDescriptionBox.innerHTML = `<p>${minionEnDescription}</p>`;
@@ -80,6 +81,7 @@ function randSearch(e) {
       minionImgContainer.classList.remove("hidden");
       minionImgContainer.innerHTML = `<img src="${minionImg}" alt="image of ${minionName}">`;
       infoContainer.classList.remove("hidden");
+      minionNameContainer.classList.remove("hidden");
       minionNameContainer.innerHTML = `<p>${minionName}</p>`;
       descriptionBox.innerHTML = `<p>${minionDescription}</p>`;
       enDescriptionBox.innerHTML = `<p>${minionEnDescription}</p>`;
