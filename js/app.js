@@ -16,7 +16,13 @@ async function search(e) {
   console.log(stringPassIn);
   if (searchValue != "") {
     await fetch(stringPassIn)
-      .then((res) => res.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("NETWORK RESPONSE ERROR");
+        }
+      })
       .then((data) => {
         console.log(data);
         //defining data name
@@ -37,7 +43,8 @@ async function search(e) {
         searchValue.value = "";
         alert.textContent = "";
         alert.classList.add("hidden");
-      });
+      })
+      .catch((error) => console.error("FETCH ERROR:", error));
   } else {
     displayError();
   }
