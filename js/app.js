@@ -70,21 +70,18 @@ function randSearch(e) {
       console.log(data);
       //defining data name (do not need to target first in array)
       minionData = data;
-      minionName = minionData.name;
-      minionImg = minionData.image;
-      minionDescription = minionData.description;
-      minionEnDescription = minionData.enhanced_description;
-      minionTooltip = minionData.tooltip;
+      const { name, image, description, enhanced_description, tooltip } =
+        minionData;
 
       //showing the info in divs
       minionImgContainer.classList.remove("hidden");
-      minionImgContainer.innerHTML = `<img src="${minionImg}" alt="image of ${minionName}">`;
+      minionImgContainer.innerHTML = `<img src="${image}" alt="image of ${name}">`;
       infoContainer.classList.remove("hidden");
       minionNameContainer.classList.remove("hidden");
-      minionNameContainer.innerHTML = `<p>${minionName}</p>`;
-      descriptionBox.innerHTML = `<p>${minionDescription}</p>`;
-      enDescriptionBox.innerHTML = `<p>${minionEnDescription}</p>`;
-      toolTip.innerHTML = `<p>${minionTooltip}</p>`;
+      minionNameContainer.innerHTML = `<p>${name}</p>`;
+      descriptionBox.innerHTML = `<p>${description}</p>`;
+      enDescriptionBox.innerHTML = `<p>${enhanced_description}</p>`;
+      toolTip.innerHTML = `<p>${tooltip}</p>`;
       searchValue.value = "";
       alert.textContent = "";
       alert.classList.add("hidden");
