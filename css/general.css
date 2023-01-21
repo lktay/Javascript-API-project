@@ -15,6 +15,12 @@ header h1 {
   color: black;
   text-shadow: 1px 1px #353b48;
 }
+
+.alert {
+  text-align: center;
+  height: 25px;
+}
+
 .img-container {
   background-color: white;
   width: calc(200px + 0.1vh);

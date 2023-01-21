@@ -1,35 +1,42 @@
 const alert = document.querySelector(".alert");
-const searchValue = document.querySelector(".search_input").value;
-const stringPassIn = `https://ffxivcollect.com/api/minions?name_en_cont=${searchValue}`;
 
 //***FUNCTIONS***
 // search function
-function search(e) {
+async function search(e) {
+  let searchValue = document.querySelector(".search_input").value;
+  let stringPassIn = `https://ffxivcollect.com/api/minions?name_en_cont=${searchValue}`;
+
   console.log(searchValue);
   console.log(stringPassIn);
   if (searchValue != "") {
-    fetch(stringPassIn)
+    await fetch(stringPassIn)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        returnToDefault();
+        minionData = data.results;
+        minionName = minionData[0].name;
+        minionDescription = minionData[0].description;
+        minionEnDescription = minionData[0].enhanced_description;
+        minionTooltip = minionData[0].tooltip;
+        console.log(minionTooltip);
+        // returnToDefault();
       });
   } else {
-    displayError();
+    await displayError();
   }
 }
 
+//error function
 function displayError() {
   alert.textContent = "Please enter a value";
   alert.classList.remove("hidden");
-  setTimeout(function () {
-    alert.textContent = "";
-    alert.classList.add("hidden");
-  }, 1000);
 }
-function returnToDefault() {
-  searchValue.textContent = "";
-}
+//default function
+// function returnToDefault() {
+//   searchValue.value = "";
+//   alert.textContent = "";
+//   alert.classList.add("hidden");
+// }
 
 // event listeners
 document.querySelector(".search-button").addEventListener("click", search);
