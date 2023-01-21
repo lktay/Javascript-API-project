@@ -39,10 +39,12 @@ header h1 {
 .hidden {
   visibility: hidden;
 }
-footer span {
-  display: flex;
-  justify-content: center;
-  margin: 5% 0;
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 footer i {
   font-size: 30px;
