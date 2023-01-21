@@ -54,7 +54,6 @@ async function search(e) {
 }
 
 //random Search
-
 function randSearch(e) {
   e.preventDefault();
   let rand = Math.floor(Math.random() * 472);
@@ -69,7 +68,7 @@ function randSearch(e) {
     })
     .then((data) => {
       console.log(data);
-      //defining data name
+      //defining data name (do not need to target first in array)
       minionData = data;
       minionName = minionData.name;
       minionImg = minionData.image;
