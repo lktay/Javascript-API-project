@@ -26,13 +26,12 @@ async function search(e) {
       })
       .then((data) => {
         console.log(data);
-        //defining data name
         minionData = data.results;
         minionName = minionData[0].name;
         minionImg = minionData[0].image;
         minionDescription = minionData[0].description;
         minionEnDescription = minionData[0].enhanced_description;
-        minionTooltip = minionData[0].tooltip;
+        minionTooltip = minionData[0].tooltip; //defining data name
 
         //showing the info in divs
         minionImgContainer.classList.remove("hidden");
@@ -68,10 +67,9 @@ function randSearch(e) {
     })
     .then((data) => {
       console.log(data);
-      //defining data name (do not need to target first in array)
       minionData = data;
       const { name, image, description, enhanced_description, tooltip } =
-        minionData;
+        minionData; //defining data name (do not need to target first in array), destructed in this instance
 
       //showing the info in divs
       minionImgContainer.classList.remove("hidden");
